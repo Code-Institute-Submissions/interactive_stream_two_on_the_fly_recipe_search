@@ -33,3 +33,24 @@ h1 {
     color: #ffffff;
     background-color: #66cc99;
  }
+
+ /*Recipe Results*/
+ #spacer {
+  margin-top:20px;
+}
+
+ ul li {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+img {
+  display:block;
+  margin: 0 auto;
+}
+
+.btn-default {
+  width: 100%;
+  background-color: #eaf8f1;
+}
