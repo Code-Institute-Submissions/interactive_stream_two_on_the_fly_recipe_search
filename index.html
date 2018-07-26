@@ -12,41 +12,78 @@
 </head>
 
 <body>
-    <h1> On the Fly</h1>
+    <div class="nav-left">
+        <div class="button" id="btn">
+            <div class="bar top"></div>
+            <div class="bar middle"></div>
+            <div class="bar bottom"></div>
+        </div>
+    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <form id="recipeForm">
-                    <div class="form-group">
-                        <input name="ingredient" type="text" class="search-query form-control" placeholder="Type an ingredient" />
-                        <br>
-                        <select class="form-control" id="preselect">
+    <main>
+
+        <h1> On the Fly</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <form id="recipeForm">
+                        <div class="form-group">
+                            <input name="ingredient" type="text" class="search-query form-control" placeholder="Type an ingredient" />
+                            <br>
+                            <select class="form-control" id="preselect">
           <option value="" selected>Popular Ingredients</option>
           <option value="carrot">Carrot</option>
           <option value="parsnip">Parnsip</option>
           <option value="kale">Kale</option>
           <option value="onion">Onion</option>
         </select>
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
+        <div class="container search">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-5">
+                    <button id="submit" onclick="submitIngredient(pageNumber); hideHome();">Check Ingredient</button>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="home">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <img class="img-responsive" src="images/trolley.png">
+                    <h4>Sucker for supermarket offers?</h4>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <img class="img-responsive" src="images/fridge.png">
+                    <h4>Got lots lurking in your fridge?</h4>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <img class="img-responsive" src="images/recipe-book.png">
+                    <h4>Waste not! Just pop an ingredient in the search and get cooking</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar">
+
+        <h2>Dietary Requirement Options</h2>
+
+        <h2>Health Options</h2>
     </div>
 
-    <div class="container search">
-        <div class="row">
-            <div class="col-xs-2 col-xs-offset-5">
-                <button id="submit" onclick="submitIngredient(pageNumber)">Check Ingredient</button>
-            </div>
-        </div>
-    </div>
-    
+
     <div class="container-fluid" id="data">
-        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='js/homepage_functionality.js'></script>
     <script type='text/javascript' src='js/config.js'></script>
     <script type='text/javascript' src='js/script.js'></script>
 </body>
+
 </html>
