@@ -51,7 +51,8 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="home">
+        <div id="home">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-4">
                     <img class="img-responsive" src="images/trolley.png">
@@ -67,10 +68,74 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Trending Recipes</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="hero">
+                        <div class="hero">
+                            <figure class="on">
+                                <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                                <div>
+                                    <h2>Sumptious Pancakes</h2>
+                                    <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
+                                    <p><a href="pancake.html">Click for Recipe</a></p>
+                                </div>
+                            </figure>
+                            <figure>
+                                <img src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+                                <div>
+                                    <h2>Pan Seared Salmon</h2>
+                                    <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
+                                    <p><a href="salmon.html">Click for Recipe</a></p>
+                                </div>
+                            </figure>
+                            <figure>
+                                <img src="https://images.pexels.com/photos/568370/pexels-photo-568370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+                                <div>
+                                    <h2>Quiche Lorraine</h2>
+                                    <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe.</p>
+                                    <p><a href="quiche.html">Click for Recipe</a></p>
+                                </div>
+                            </figure>
+                            <figure>
+                                <img src="https://images.pexels.com/photos/775030/pexels-photo-775030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+                                <div>
+                                    <h2>Berry Smoothie</h2>
+                                    <p>Make the most of the berry season with a glass of fruity goodness.</p>
+                                    <p><a href="smoothie.html">Click for Recipe</a></p>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Get Social</h2>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+        
+         <div class="container-fluid" id="data">
+        
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     </main>
 
     <div class="sidebar">
-
         <h2>Dietary Requirement Options</h2>
         <form id="dietaryForm">
             <ul class="filterlist">
@@ -102,32 +167,32 @@
                     <input type="checkbox" name="sugarConscious" value="false">
                     <label for="sugar conscious">Low Sugar</label>
                 </li>
-                
+
                 <li>
                     <input type="checkbox" name="balanced" value="false">
                     <label for="balanced">Balanced</label>
                 </li>
-                
+
                 <li>
                     <input type="checkbox" name="high-protein" value="false">
                     <label for="high-protein">High-Protein</label>
                 </li>
-                
+
                 <!--<li>-->
                 <!--    <input type="checkbox" name="high-fibre" value="false">-->
                 <!--    <label for="high-fiber">High-Fibre</label>-->
                 <!--</li>-->
-                
+
                 <li>
                     <input type="checkbox" name="low-fat" value="false">
                     <label for="low-fat">Low-Fat</label>
                 </li>
-                
+
                 <li>
                     <input type="checkbox" name="low-carb" value="false">
                     <label for="low-carb">Low-Carb</label>
                 </li>
-                
+
                 <!--<li>-->
                 <!--    <input type="checkbox" name="low-sodium" value="false">-->
                 <!--    <label for="low-sodium">Low-Sodium</label>-->
@@ -136,14 +201,14 @@
                 <li>Max Calories
                     <input name="maxCalories" type="text" size="4" value="600">
                 </li>
+            
+           <li><button class="btn btn-default reset" type="reset">Clear</button></li>
             </ul>
         </form>
-        <h2>Health Options</h2>
     </div>
 
 
-    <div class="container-fluid" id="data">
-    </div>
+   
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type='text/javascript' src='js/homepage_functionality.js'></script>

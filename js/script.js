@@ -104,7 +104,7 @@ function displayRecipeData(apiData) {
         htmlRecipe += "<div><strong>Sugar % of RDI: </strong> " + (sugar / sugarRDI).toFixed(2) + "</div>";
         htmlRecipe += "<div><strong>Fat % of RDI: </strong> " + (fat / fatRDI).toFixed(2) + "</div>";
         htmlRecipe += "</div>"
-
+        
 
 
         //print out prev and next buttons
@@ -117,6 +117,8 @@ function displayRecipeData(apiData) {
 
         document.getElementById("data").innerHTML = htmlRecipe;
     }
+    
+    
 }
 
 
@@ -223,4 +225,21 @@ function submitIngredient(pageNumber) {
 
     request.open("GET", apiRequest);
     request.send();
+}
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
