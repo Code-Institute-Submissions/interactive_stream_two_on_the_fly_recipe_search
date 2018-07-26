@@ -155,6 +155,71 @@ function submitIngredient(pageNumber) {
     apiRequest += "&from=" + start + "&to=" + end;
 
     apiRequest += "&app_id=" + appid + "&app_key=" + appKey;
+    
+    let nuts = document.getElementById("dietaryForm")["nutFree"].checked;
+    if (nuts == true) {
+        apiRequest += "&health=tree-nut-free";
+    }
+    let peanuts = document.getElementById("dietaryForm")["peanutFree"].checked;
+    if (peanuts == true) {
+        apiRequest += "&health=peanut-free";
+    }
+
+    let vegan = document.getElementById("dietaryForm")["vegan"].checked;
+    if (vegan == true) {
+        apiRequest += "&health=vegan";
+    }
+
+    let vegetarian = document.getElementById("dietaryForm")["vegetarian"].checked;
+    if (vegetarian == true) {
+        apiRequest += "&health=vegetarian";
+    }
+    
+     let alcohol = document.getElementById("dietaryForm")["alcohol-free"].checked;
+    if (alcohol == true) {
+        apiRequest += "&health=alcohol-free";
+    }
+
+    let sugarConscious = document.getElementById("dietaryForm")["sugarConscious"].checked;
+    if (sugarConscious == true) {
+        apiRequest += "&health=sugar-conscious";
+    }
+    
+    let balanced = document.getElementById("dietaryForm")["balanced"].checked;
+    if (balanced == true) {
+        apiRequest += "&diet=balanced";
+    }
+    
+    let protein = document.getElementById("dietaryForm")["high-protein"].checked;
+    if (protein == true) {
+        apiRequest += "&diet=high-protein";
+    }
+    
+    // let fibre = document.getElementById("dietaryForm")["high-fibre"].checked;
+    // if (fibre == true) {
+    //     apiRequest += "&diet=high-fibre";
+    // }
+    
+    let fat = document.getElementById("dietaryForm")["low-fat"].checked;
+    if (fat == true) {
+        apiRequest += "&diet=low-fat";
+    }
+    
+    let carb = document.getElementById("dietaryForm")["low-carb"].checked;
+    if (carb == true) {
+        apiRequest += "&diet=low-carb";
+    }
+
+    // let sodium = document.getElementById("dietaryForm")["low-sodium"].checked;
+    // if (sodium == true) {
+    //     apiRequest += "&diet=low-sodium";
+    // }
+
+    let calories = document.getElementById("dietaryForm")["maxCalories"].value;
+    if (calories != "") {
+        calories = "&calories=120-" + calories;
+    }
+    apiRequest += calories;
 
     request.open("GET", apiRequest);
     request.send();
