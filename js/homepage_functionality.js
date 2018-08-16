@@ -10,6 +10,12 @@ $(document).ready(function() {
     toggleSidebar();
   });
   
+   $(document).keyup(function(e) {
+    if (e.keyCode === 27) {
+      toggleSidebar();
+    }
+  });
+  
   var $item = 0,
       $itemNo = $('.hero figure').length;
   function transitionSlide() {
@@ -30,9 +36,18 @@ $(document).ready(function() {
     $autoTransition = setInterval(transitionSlide, 3500);
   });
 
+
+
+
+
 });
 
 function hideHome() { 
      let home = document.getElementById("home");
      home =  home.style.display = "none";
 }
+
+function resetResults() { 
+      window.location.reload();
+}
+

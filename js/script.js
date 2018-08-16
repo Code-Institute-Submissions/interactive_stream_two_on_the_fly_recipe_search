@@ -16,6 +16,8 @@ function displayRecipeData(apiData) {
             $(this).next().stop(true).slideToggle('slow');
         });
     });
+
+   
     //Display recipes as html--------------------------------------------------------------------------------------
 
     let htmlRecipe = "";
@@ -103,9 +105,10 @@ function displayRecipeData(apiData) {
 
         htmlRecipe += "<div><strong>Sugar % of RDI: </strong> " + (sugar / sugarRDI).toFixed(2) + "</div>";
         htmlRecipe += "<div><strong>Fat % of RDI: </strong> " + (fat / fatRDI).toFixed(2) + "</div>";
-        htmlRecipe += "</div>"
-        
 
+
+        htmlRecipe += "<div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='" + (fat / fatRDI).toFixed(2) + "%'" + "aria-valuemin='0' aria-valuemax='100' style='width:" + (fat / fatRDI).toFixed(2) + "%'></div></div>";
+        htmlRecipe += "</div>"
 
         //print out prev and next buttons
         if (i == 11) {
@@ -117,8 +120,8 @@ function displayRecipeData(apiData) {
 
         document.getElementById("data").innerHTML = htmlRecipe;
     }
-    
-    
+
+
 }
 
 
@@ -136,6 +139,20 @@ request.onreadystatechange = function() {
 };
 
 //Function getting called when the search button is clicked--------------------------------------------------------
+
+function showLoader() {
+    let loader = document.getElementById("loader");
+    loader = loader.style.display = "block";
+}
+
+function stopLoader() {
+    let loader = document.getElementById("loader");
+    loader = loader.style.display = "none";
+}
+
+
+
+
 let pageNumber = 1;
 
 function submitIngredient(pageNumber) {
@@ -157,7 +174,7 @@ function submitIngredient(pageNumber) {
     apiRequest += "&from=" + start + "&to=" + end;
 
     apiRequest += "&app_id=" + appid + "&app_key=" + appKey;
-    
+
     let nuts = document.getElementById("dietaryForm")["nutFree"].checked;
     if (nuts == true) {
         apiRequest += "&health=tree-nut-free";
@@ -176,8 +193,8 @@ function submitIngredient(pageNumber) {
     if (vegetarian == true) {
         apiRequest += "&health=vegetarian";
     }
-    
-     let alcohol = document.getElementById("dietaryForm")["alcohol-free"].checked;
+
+    let alcohol = document.getElementById("dietaryForm")["alcohol-free"].checked;
     if (alcohol == true) {
         apiRequest += "&health=alcohol-free";
     }
@@ -186,27 +203,27 @@ function submitIngredient(pageNumber) {
     if (sugarConscious == true) {
         apiRequest += "&health=sugar-conscious";
     }
-    
+
     let balanced = document.getElementById("dietaryForm")["balanced"].checked;
     if (balanced == true) {
         apiRequest += "&diet=balanced";
     }
-    
+
     let protein = document.getElementById("dietaryForm")["high-protein"].checked;
     if (protein == true) {
         apiRequest += "&diet=high-protein";
     }
-    
+
     // let fibre = document.getElementById("dietaryForm")["high-fibre"].checked;
     // if (fibre == true) {
     //     apiRequest += "&diet=high-fibre";
     // }
-    
+
     let fat = document.getElementById("dietaryForm")["low-fat"].checked;
     if (fat == true) {
         apiRequest += "&diet=low-fat";
     }
-    
+
     let carb = document.getElementById("dietaryForm")["low-carb"].checked;
     if (carb == true) {
         apiRequest += "&diet=low-carb";
@@ -225,15 +242,27 @@ function submitIngredient(pageNumber) {
 
     request.open("GET", apiRequest);
     request.send();
+    stoploader();
 }
 
+let input = document.getElementById("clickSearch");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("submit").click();
+    }
+});
+
+
+
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
-    } else {
+    }
+    else {
         document.getElementById("myBtn").style.display = "none";
     }
 }

@@ -15,7 +15,22 @@ h1 {
     padding-bottom: 5rem;
 }
 
+h2, h3 {
+  color: #66cc99;
+  
+}
 
+.panel {
+   background: rgba(255,255,255, 0.6);
+}
+
+.panel p {
+  color: #606060;
+}
+
+#logo a:hover {
+text-decoration: none;  
+}
 
 .search {
     padding-top: 2.5rem;
@@ -186,6 +201,12 @@ main {
 }
 
 
+/*Mobile View Trending*/
+
+.mobile h2 {
+  font-size: 1em;
+}
+
 /*carousel*/
 
 @-webkit-keyframes infoIn {
@@ -290,10 +311,11 @@ main {
 .hero figure:not(.on):hover {
   cursor: pointer;
 }
+
 .hero figure:not(.on) h2 {
   transform:rotate(270deg);
   color: #ffffff;
-  font-size:3em;
+  font-size:2em;
   position: absolute;
   top: 65%;
   right:0;

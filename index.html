@@ -21,15 +21,16 @@
     </div>
 
     <main>
-
-        <h1> On the Fly</h1>
-
+    <header id="logo">
+        <a href="index.html"><h1> On the Fly </h1></a>
+        </header>
+        
         <div class="container">
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                     <form id="recipeForm">
                         <div class="form-group">
-                            <input name="ingredient" type="text" class="search-query form-control" placeholder="Type an ingredient" />
+                            <input name="ingredient" type="text" id="clickSearch" class="search-query form-control" placeholder="Type an ingredient" />
                             <br>
                             <select class="form-control" id="preselect">
           <option value="" selected>Popular Ingredients</option>
@@ -38,6 +39,7 @@
           <option value="kale">Kale</option>
           <option value="onion">Onion</option>
         </select>
+        <input type="reset" value="Reset" onClick="resetResults()">
                         </div>
                     </form>
                 </div>
@@ -47,92 +49,144 @@
         <div class="container search">
             <div class="row">
                 <div class="col-xs-2 col-xs-offset-5">
-                    <button id="submit" onclick="submitIngredient(pageNumber); hideHome();">Check Ingredient</button>
+                    <button id="submit" onclick="hideHome(); showLoader(); submitIngredient(pageNumber);">SEARCH</button>
+                    <button><a class="button" href="#">Advanced Search Options</a></button>
                 </div>
             </div>
+        </div>
+        <div id="loader">
+            <p>Stuff</p>
         </div>
         <div id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4">
-                    <img class="img-responsive" src="images/trolley.png">
-                    <h4>Sucker for supermarket offers?</h4>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <img class="img-responsive" src="images/fridge.png">
-                    <h4>Got lots lurking in your fridge?</h4>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <img class="img-responsive" src="images/recipe-book.png">
-                    <h4>Waste not! Just pop an ingredient in the search and get cooking</h4>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2>Trending Recipes</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <img class="img-responsive" src="images/trolley.png" alt="Trolley">
+                        <h4>Sucker for supermarket offers?</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <img class="img-responsive" src="images/fridge.png" alt="Fridge">
+                        <h4>Got lots lurking in your fridge?</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <img class="img-responsive" src="images/recipe-book.png" alt="Recipe Book">
+                        <h4>Waste not! Just pop an ingredient in the search and get cooking</h4>
+                    </div>
                 </div>
             </div>
-
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div id="hero">
-                        <div class="hero">
-                            <figure class="on">
-                                <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                                <div>
-                                    <h2>Sumptious Pancakes</h2>
-                                    <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
-                                    <p><a href="pancake.html">Click for Recipe</a></p>
-                                </div>
-                            </figure>
-                            <figure>
-                                <img src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
-                                <div>
-                                    <h2>Pan Seared Salmon</h2>
-                                    <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
-                                    <p><a href="salmon.html">Click for Recipe</a></p>
-                                </div>
-                            </figure>
-                            <figure>
-                                <img src="https://images.pexels.com/photos/568370/pexels-photo-568370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
-                                <div>
-                                    <h2>Quiche Lorraine</h2>
-                                    <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe.</p>
-                                    <p><a href="quiche.html">Click for Recipe</a></p>
-                                </div>
-                            </figure>
-                            <figure>
-                                <img src="https://images.pexels.com/photos/775030/pexels-photo-775030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
-                                <div>
-                                    <h2>Berry Smoothie</h2>
-                                    <p>Make the most of the berry season with a glass of fruity goodness.</p>
-                                    <p><a href="smoothie.html">Click for Recipe</a></p>
-                                </div>
-                            </figure>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Trending Recipes</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                       <div class="mobile">
+                            <img class="img-responsive" src="images/american_pancakes.jpg" alt="American Pancakes" />
+                                        <h2>SUMPTIOUS PANCAKES</h2>
+                                        <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
+                                        <p><a href="pancake.html">Click for Recipe</a></p>
+                    </div>
+                </div>
+                 <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                       <div class="mobile">
+                            <img class="img-responsive" src="images/salmon.jpg" alt="Pan Seared Salmon" />
+                                        <h2>SEARED SALMON</h2>
+                                        <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
+                                        <p><a href="salmon.html">Click for Recipe</a></p>
+                    </div>
+                    </div>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                       <div class="mobile">
+                            <img class="img-responsive" src="images/quiche.jpg" alt="Quiche Lorraine" />
+                                        <h2>QUICHE LORRAINE</h2>
+                                        <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
+                                        <p><a href="salmon.html">Click for Recipe</a></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                       <div class="mobile">
+                             <img class="img-responsive" src="images/smoothie.jpg" alt="Berry Smoothie" />
+                                        <h2>BERRY SMOOTHIE</h2>
+                                        <p>Make the most of the berry season with a glass of fruity goodness.</p>
+                                        <p><a href="smoothie.html">Click for Recipe</a></p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            
+            
+            
+            
+            <div class="container hidden-xs">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="hero">
+                            <div class="hero">
+                                <figure class="on">
+                                    <img src="images/american_pancakes.jpg" alt="American Pancakes" />
+                                    <div class="panel">
+                                        <h2>SUMPTIOUS PANCAKES</h2>
+                                        <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
+                                        <p><a href="pancake.html">Click for Recipe</a></p>
+                                    </div>
+                                </figure>
+                                <figure>
+                                    <img src="images/salmon.jpg" alt="Pan Seared Salmon" />
+                                    <div class="panel">
+                                        <h2>SEARED SALMON</h2>
+                                        <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
+                                        <p><a href="salmon.html">Click for Recipe</a></p>
+                                    </div>
+                                </figure>
+                                <figure>
+                                    <img src="images/quiche.jpg" alt="Quiche Lorraine" />
+                                   <div class="panel">
+                                        <h2>QUICHE LORRAINE</h2>
+                                        <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe.</p>
+                                        <p><a href="quiche.html">Click for Recipe</a></p>
+                                    </div>
+                                </figure>
+                                <figure>
+                                    <img src="images/smoothie.jpg" alt="Berry Smoothie" />
+                                    <div class="panel">
+                                        <h2>BERRY SMOOTHIE</h2>
+                                        <p>Make the most of the berry season with a glass of fruity goodness.</p>
+                                        <p><a href="smoothie.html">Click for Recipe</a></p>
+                                    </div>
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2>Get Social</h2>
+            
+            
+            
+            
+            
+            
+            
+            
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2>Get Social</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
         </div>
-        
-         <div class="container-fluid" id="data">
-        
-    </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+        <div class="container-fluid" id="data">
+
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     </main>
 
     <div class="sidebar">
@@ -201,14 +255,14 @@
                 <li>Max Calories
                     <input name="maxCalories" type="text" size="4" value="600">
                 </li>
-            
-           <li><button class="btn btn-default reset" type="reset">Clear</button></li>
+
+                <li><button class="btn btn-default reset" type="reset">Clear</button></li>
             </ul>
         </form>
     </div>
 
 
-   
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type='text/javascript' src='js/homepage_functionality.js'></script>
