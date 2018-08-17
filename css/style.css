@@ -81,7 +81,7 @@ main {
     -o-transition: transform .7s ease-in-out;
     transition: transform .7s ease-in-out;
     text-align: center;
-   min-height: 100vh;
+    min-height: 100vh;
 }
 
 .sidebar {
