@@ -16,7 +16,7 @@ function displayRecipeData(apiData) {
             $(this).next().stop(true).slideToggle('slow');
         });
     });
-
+   
    
     //Display recipes as html--------------------------------------------------------------------------------------
 
@@ -25,8 +25,7 @@ function displayRecipeData(apiData) {
     let fatRDI = 10;
 
     let count = 0;
-
-
+     
     for (var i = 0; i < 12; i++) {
 
         count++;
@@ -34,17 +33,16 @@ function displayRecipeData(apiData) {
         if (i % 3 == 0) {
             htmlRecipe += "</div>" + "</div>" + "<div class = 'container'>" + "<div class ='row' id = 'spacer'>";
         }
-
         let link = recipeData.hits[i].recipe.url;
         let image = recipeData.hits[i].recipe.image;
         let recipeTitle = recipeData.hits[i].recipe.label;
         let recipeSource = recipeData.hits[i].recipe.source;
 
-        htmlRecipe += "<div class='col-xs-12 col-sm-6 col-md-4'>";
+        htmlRecipe += "<div class='col-xs-12 col-sm-12 col-md-4'>";
         htmlRecipe += "<div>" + `<img src=${image} class='image'>` + "</div>";
         htmlRecipe += "<div><strong><h3>" + recipeTitle.toUpperCase() + "</h3></strong></div>";
-        htmlRecipe += "<div><strong>By: " + `<a href=${link}>` + recipeSource + "</a></strong></div>";
-        htmlRecipe += "<div><strong>Link to website: </strong>" + `<a href=${link}>` + "Link to source" + "</a>" + "</div>";
+        htmlRecipe += "<div class='text-left'><strong>By: " + `<a href=${link}>` + recipeSource + "</a></strong></div>";
+        
 
         let time = "No time available";
         if (recipeData.hits[i].recipe.totalTime != 0) {
@@ -54,12 +52,12 @@ function displayRecipeData(apiData) {
             time = "No time available";
         }
 
-        htmlRecipe += "<div><strong>Total Recipe Time: </strong> " + time + " </div>";
+        htmlRecipe += "<div class='text-left'><strong>Total Recipe Time: </strong> " + time + " </div>";
 
 
         // health, diet labels and cautions--------------------------------------------------------------------------------        
 
-        htmlRecipe += "<button class = 'btn btn-default bottom_button'>Nutrition Details</button><div style='display:none'><ul>";
+        htmlRecipe += "<button class = 'btn btn-default bottom_button'>Nutrition Details</button><div style='display:none'><ul class='text-left'>";
 
         for (var j = 0; j < recipeData.hits[i].recipe.healthLabels.length; j++) {
             htmlRecipe += "<li>" + recipeData.hits[i].recipe.healthLabels[j] + "</li>";
@@ -76,13 +74,15 @@ function displayRecipeData(apiData) {
         htmlRecipe += "</ul></div><br/>";
 
 
-        htmlRecipe += "<button class = 'btn btn-default bottom_button2'>Ingredients</button><div style='display:none'><ul> ";
+        htmlRecipe += "<button class = 'btn btn-default bottom_button2'>Ingredients</button><div style='display:none'><ul class='text-left'> ";
 
         for (var p = 0; p < recipeData.hits[i].recipe.ingredientLines.length; p++) {
             htmlRecipe += "<p>" + recipeData.hits[i].recipe.ingredientLines[p] + "</p>";
         }
 
         htmlRecipe += "</ul></div>";
+        
+        
 
         //Serving and nutritional information----------------------------------------------------------------------------        
 
@@ -92,8 +92,8 @@ function displayRecipeData(apiData) {
 
         caloriesPerServing = caloriesPerServing.toFixed(0);
 
-        htmlRecipe += "<div><p>Serves: </p>" + serving + "</div>";
-        htmlRecipe += "<div><p>Cals par serve: </p><p> " + caloriesPerServing + "</p></div>";
+        htmlRecipe += "<div class='text-left'><strong><p>Serves: </strong>" + serving + "</p></div>";
+        htmlRecipe += "<div class='text-left'><strong><p>Cals per serving: </strong> " + caloriesPerServing + "</p></div>";
 
 
         let sugar = 1;
@@ -103,21 +103,18 @@ function displayRecipeData(apiData) {
 
         let fat = recipeData.hits[i].recipe.totalNutrients.FAT.quantity;
 
-        htmlRecipe += "<div><strong>Sugar % of RDI: </strong> " + (sugar / sugarRDI).toFixed(2) + "</div>";
-        htmlRecipe += "<div><strong>Fat % of RDI: </strong> " + (fat / fatRDI).toFixed(2) + "</div>";
-
-
-        htmlRecipe += "<div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='" + (fat / fatRDI).toFixed(2) + "%'" + "aria-valuemin='0' aria-valuemax='100' style='width:" + (fat / fatRDI).toFixed(2) + "%'></div></div>";
-        htmlRecipe += "</div>"
-
+        
+        htmlRecipe += "<div class='text-left'><strong>Sugar % of RDI: </strong><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='" + (fat / fatRDI).toFixed(2) + "%" + "aria-valuemin='0' aria-valuemax='100' style='width:" + (sugar / sugarRDI).toFixed(2) + "%'>"+ (sugar / sugarRDI).toFixed(2)  +"%</div></div></div>";
+        htmlRecipe += "<div class='text-left'><strong>Fat % of RDI: </strong><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='" + (fat / fatRDI).toFixed(2) + "%" + "aria-valuemin='0' aria-valuemax='100' style='width:" + (fat / fatRDI).toFixed(2) + "%'>"+ (fat / fatRDI).toFixed(2)  +"%</div></div></div></div>";
         //print out prev and next buttons
         if (i == 11) {
-            htmlRecipe += "<button onclick='submitIngredient(pageNumber+1)'>Next</button>";
+            htmlRecipe += "<button class='bt btn-default onclick='submitIngredient(pageNumber+1)'>Next</button>";
             if (pageNumber > 1) {
-                htmlRecipe += "<button onclick='submitIngredient(pageNumber-1)'>Previous</button>";
+                htmlRecipe += "<button class='bt btn-default onclick='submitIngredient(pageNumber-1)'>Previous</button>";
             }
+            pageNumber++;
+            console.log("page number "+ pageNumber);
         }
-
         document.getElementById("data").innerHTML = htmlRecipe;
     }
 
@@ -153,7 +150,7 @@ function stopLoader() {
 
 
 
-let pageNumber = 1;
+let pageNumber = 0;
 
 function submitIngredient(pageNumber) {
     let appid = config.APP_ID;
@@ -171,8 +168,11 @@ function submitIngredient(pageNumber) {
     pageNumber = parseInt(pageNumber, 10);
     let start = pageNumber * 12 - 12;
     let end = pageNumber * 12;
+    if (pageNumber==0){
+        start = 0;
+        end = 12;
+    }
     apiRequest += "&from=" + start + "&to=" + end;
-
     apiRequest += "&app_id=" + appid + "&app_key=" + appKey;
 
     let nuts = document.getElementById("dietaryForm")["nutFree"].checked;
@@ -239,19 +239,14 @@ function submitIngredient(pageNumber) {
         calories = "&calories=120-" + calories;
     }
     apiRequest += calories;
+    console.log("api request "+apiRequest);
 
     request.open("GET", apiRequest);
     request.send();
-    stoploader();
+    //stoploader();
 }
 
-let input = document.getElementById("clickSearch");
-input.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("submit").click();
-    }
-});
+
 
 
 

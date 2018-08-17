@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Pacifico');
 
 body,
 html {
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -37,19 +37,35 @@ text-decoration: none;
     padding-bottom: 2.5rem;
 }
 
-.search button {
-    background-color: #ffffff;
+.search-buttons {
+    background-color: #66cc99;
     border-color: #66cc99;
     border: solid;
-    color: #66cc99;
-    padding: 0.5em 1.0em;
-    display: inline-block;
+    color:#ffffff;
+    padding:0.5em;
 }
 
-.search button:hover {
-    color: #ffffff;
+.search-buttons:hover {
     background-color: #66cc99;
+    border-color: #66cc99;
+    border: solid;
+    color:#ffffff;
+    padding:0.5em;
 }
+
+.search-buttons:active {
+    background-color: #66cc99;
+    border-color: #66cc99;
+    border: solid;
+    color:#ffffff;
+    padding:0.5em;
+}
+
+
+#reset {
+  display: none;
+}
+
 
 
 /* Sidebar Filter*/
@@ -65,6 +81,7 @@ main {
     -o-transition: transform .7s ease-in-out;
     transition: transform .7s ease-in-out;
     text-align: center;
+   min-height: 100vh;
 }
 
 .sidebar {
@@ -206,6 +223,9 @@ main {
 .mobile h2 {
   font-size: 1em;
 }
+
+
+
 
 /*carousel*/
 
@@ -419,6 +439,49 @@ main {
   }
 }
 
+/*Trending Recipes*/
+
+.ingredients {
+  text-align: justify;
+}
+
+.method {
+  text-align: justify;
+}
+
+.trending {
+   text-align: justify;
+   padding-bottom: 3rem;
+}
+
+.trending h2 {
+  color: #66cc99;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 0;
+  
+}
+
+.panel-default>.panel-heading {
+  background-color: #eaf8f1;
+}
+
+#pancake {
+  display: none;
+}
+
+#salmon {
+  display: none;
+}
+
+#quiche {
+  display: none;
+}
+
+#smoothie {
+  display: none;
+}
+
 
 /*Recipe Results*/
 
@@ -440,6 +503,11 @@ img {
 .btn-default {
     width: 100%;
     background-color: #eaf8f1;
+}
+
+.progress-bar {
+  background-color: #66cc99;
+  color:#696969;
 }
 
 #myBtn {

@@ -21,17 +21,24 @@
     </div>
 
     <main>
-    <header id="logo">
-        <a href="index.html"><h1> On the Fly </h1></a>
+        <header id="logo">
+            <a href="index.html">
+                <h1> On the Fly </h1>
+            </a>
         </header>
-        
+
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                     <form id="recipeForm">
                         <div class="form-group">
+                            <input class="btn btn-default" id="reset" type="reset" value="Clear Search Results" onClick="resetResults()">
+                        </div>
+                        <div class="form-group">
                             <input name="ingredient" type="text" id="clickSearch" class="search-query form-control" placeholder="Type an ingredient" />
-                            <br>
+                        </div>
+                        <div class="form-group">
                             <select class="form-control" id="preselect">
           <option value="" selected>Popular Ingredients</option>
           <option value="carrot">Carrot</option>
@@ -39,24 +46,33 @@
           <option value="kale">Kale</option>
           <option value="onion">Onion</option>
         </select>
-        <input type="reset" value="Reset" onClick="resetResults()">
                         </div>
-                    </form>
+                </div>
+            </div>
+
+            </form>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <a class="button" href="#">Advanced Search Options</a>
+                    </div>
+                    <div class="col-xs-12 search">
+                        <button class="btn search-buttons" onclick="hideHome(); showReset(); showLoader(); submitIngredient(pageNumber);">SEARCH <i class="fas fa-search"></i></button>
+                    </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="container search">
-            <div class="row">
-                <div class="col-xs-2 col-xs-offset-5">
-                    <button id="submit" onclick="hideHome(); showLoader(); submitIngredient(pageNumber);">SEARCH</button>
-                    <button><a class="button" href="#">Advanced Search Options</a></button>
-                </div>
-            </div>
-        </div>
+
         <div id="loader">
             <p>Stuff</p>
         </div>
+
+        <!------------------------------------------------------------->
         <div id="home">
             <div class="container">
                 <div class="row">
@@ -74,6 +90,9 @@
                     </div>
                 </div>
             </div>
+
+            <!------------------------------------------------------------->
+
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -81,47 +100,49 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!------------------------------------------------------------->
+
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-                       <div class="mobile">
+                        <div class="mobile">
                             <img class="img-responsive" src="images/american_pancakes.jpg" alt="American Pancakes" />
-                                        <h2>SUMPTIOUS PANCAKES</h2>
-                                        <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
-                                        <p><a href="pancake.html">Click for Recipe</a></p>
-                    </div>
-                </div>
-                 <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-                       <div class="mobile">
-                            <img class="img-responsive" src="images/salmon.jpg" alt="Pan Seared Salmon" />
-                                        <h2>SEARED SALMON</h2>
-                                        <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
-                                        <p><a href="salmon.html">Click for Recipe</a></p>
-                    </div>
+                            <h2>SUMPTIOUS PANCAKES</h2>
+                            <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
+                            <button class="btn btn-default" onclick="hideHome(); showPancakes();">Click for Recipe</button>
+                        </div>
                     </div>
                     <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-                       <div class="mobile">
-                            <img class="img-responsive" src="images/quiche.jpg" alt="Quiche Lorraine" />
-                                        <h2>QUICHE LORRAINE</h2>
-                                        <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
-                                        <p><a href="salmon.html">Click for Recipe</a></p>
+                        <div class="mobile">
+                            <img class="img-responsive" src="images/salmon.jpg" alt="Pan Seared Salmon" />
+                            <h2>SEARED SALMON</h2>
+                            <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
+                             <button class="btn btn-default" onclick="hideHome(); showSalmon();">Click for Recipe</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-                       <div class="mobile">
-                             <img class="img-responsive" src="images/smoothie.jpg" alt="Berry Smoothie" />
-                                        <h2>BERRY SMOOTHIE</h2>
-                                        <p>Make the most of the berry season with a glass of fruity goodness.</p>
-                                        <p><a href="smoothie.html">Click for Recipe</a></p>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                        <div class="mobile">
+                            <img class="img-responsive" src="images/quiche.jpg" alt="Quiche Lorraine" />
+                            <h2>QUICHE LORRAINE</h2>
+                            <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
+                            <button class="btn btn-default" onclick="hideHome(); showQuiche();">Click for Recipe</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                        <div class="mobile">
+                            <img class="img-responsive" src="images/smoothie.jpg" alt="Berry Smoothie" />
+                            <h2>BERRY SMOOTHIE</h2>
+                            <p>Make the most of the berry season with a glass of fruity goodness.</p>
+                            <button class="btn btn-default" onclick="hideHome(); showSmoothie();">Click for Recipe</button>
+                        </div>
                     </div>
                 </div>
             </div>
-                </div>
-            
-            
-            
-            
+
+
+            <!------------------------------------------------------------->
+
             <div class="container hidden-xs">
                 <div class="row">
                     <div class="col-xs-12">
@@ -132,7 +153,7 @@
                                     <div class="panel">
                                         <h2>SUMPTIOUS PANCAKES</h2>
                                         <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
-                                        <p><a href="pancake.html">Click for Recipe</a></p>
+                                        <button onclick="hideHome(); showPancakes();">Click for Recipe</p>
                                     </div>
                                 </figure>
                                 <figure>
@@ -140,7 +161,7 @@
                                     <div class="panel">
                                         <h2>SEARED SALMON</h2>
                                         <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
-                                        <p><a href="salmon.html">Click for Recipe</a></p>
+                                        <button onclick="hideHome(); showSalmon();">Click for Recipe</p>
                                     </div>
                                 </figure>
                                 <figure>
@@ -148,7 +169,7 @@
                                    <div class="panel">
                                         <h2>QUICHE LORRAINE</h2>
                                         <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe.</p>
-                                        <p><a href="quiche.html">Click for Recipe</a></p>
+                                        <button onclick="hideHome(); showQuiche();">Click for Recipe</p>
                                     </div>
                                 </figure>
                                 <figure>
@@ -156,7 +177,7 @@
                                     <div class="panel">
                                         <h2>BERRY SMOOTHIE</h2>
                                         <p>Make the most of the berry season with a glass of fruity goodness.</p>
-                                        <p><a href="smoothie.html">Click for Recipe</a></p>
+                                        <button onclick="hideHome(); showSmoothie();">Click for Recipe</p>
                                     </div>
                                 </figure>
                             </div>
@@ -166,9 +187,7 @@
             </div>
             
             
-            
-            
-            
+<!------------------------------------------------------------->            
             
             
             
@@ -183,10 +202,287 @@
             </footer>
         </div>
 
+<!------------------------------------------------------------->
+
         <div class="container-fluid" id="data">
 
         </div>
         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+                                        <!------------------------------------------------------------->
+
+                                        <div class="container" id="pancake">
+
+                                            <div class="container trending">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <img class="img-responsive" src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <h2>AMERICAN PANCAKES</h2>
+                                                        <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch. Top with something sweet like fruit, jam or syrup, or rashers of crispy bacon.</p>
+                                                        <h5>Recipe By: Good Food Magazine</h5>
+                                                        <h5><i class="fas fa-utensils"></i> Serves: 4 </h5>
+                                                        <h5><i class="far fa-clock"></i> Total Time: 55 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Prep Time: 25 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Cook Time: 30 mins</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h3 class="panel-title">Ingredients</h3>
+                                                                </div>
+                                                                <div class="panel-body ingredients">
+                                                                    <ul>
+                                                                        <li>200g self-raising flour</li>
+                                                                        <li>1 ½ tsp baking powder</li>
+                                                                        <li>1 tbsp golden caster sugar</li>
+                                                                        <li>3 large eggs</li>
+                                                                        <li>25g melted butter, plus extra for cooking</li>
+                                                                        <li>200ml milk</li>
+                                                                        <li>vegetable oil for cooking</li>
+                                                                    </ul>
+                                                                    <h5>To serve</h5>
+                                                                    <ul>
+                                                                        <li>maple syrup</li>
+                                                                        <li>toppings of your choice, such as cooked bacon, chocolate chips, blueberries or peanut butter and jam</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-8">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <h3 class="panel-title">Method</h3>
+                                                                </div>
+                                                                <div class="panel-body method">
+                                                                    <p>1. Mix the flour, baking powder, caster sugar and a pinch of salt together in a large bowl. Create a well in the centre with the back of your spoon then add the eggs, melted butter and
+                                                                        milk. Whisk together either with a balloon whisk or electric hand beaters until smooth then pour into a jug.</p>
+                                                                    <p>2. Heat a small knob of butter and 1 tsp of oil in a large, non-stick frying pan over a medium heat. When the butter looks frothy pour in rounds of the batter, approximately 8cm wide.
+                                                                        Make sure you don’t put the pancakes too close together as they will spread during cooking. Cook the pancakes on their first side for about 1-2 mins or until lots of tiny bubbles
+                                                                        start to appear and pop on the surface. Flip the pancakes over and cook for a further minute on the other side. Repeat until all the batter is used up.</p>
+                                                                    <p>3. Serve your pancakes stacked up on a plate with a drizzle of maple syrup and any of your favourite toppings.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-default reset" onclick="resetResults();"><i class="fas fa-backward"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container" id="quiche">
+                                            <div class="container trending">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <img class="img-responsive" src="https://images.pexels.com/photos/568370/pexels-photo-568370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <h2>ULTIMATE QUICHE LORRAINE</h2>
+                                                        <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe</p>
+                                                        <h5>Recipe By: Angela Nilsen</h5>
+                                                        <h5><i class="fas fa-utensils"></i> Serves: 8 </h5>
+                                                        <h5><i class="far fa-clock"></i> Total Time: 75 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Prep Time: 30 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Cook Time: 45 mins</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Ingredients</h3>
+                                                            </div>
+                                                            <div class="panel-body ingredients">
+                                                                <h5>For the pastry</h5>
+                                                                <ul>
+                                                                    <li>175g plain flour</li>
+                                                                    <li>100g cold butter, cut into pieces</li>
+                                                                    <li>1 egg yolk</li>
+                                                                </ul>
+                                                                <h5>For the filling</h5>
+                                                                <ul>
+                                                                    <li>200g pack lardon, unsmoked or smoked</li>
+                                                                    <li>50g Gruyère</li>
+                                                                    <li>200ml carton crème fraîche</li>
+                                                                    <li>200ml double cream</li>
+                                                                    <li>3 eggs, well beaten</li>
+                                                                    <li>pinch ground nutmeg</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Method</h3>
+                                                            </div>
+                                                            <div class="panel-body method">
+                                                                <p>1. For the pastry, put the flour, butter, egg yolk and 4 tsp cold water into a food processor. Using the pulse button, process until the mix binds. Tip the pastry onto a lightly floured surface,
+                                                                    gather into a smooth ball, then roll out as thinly as you can. Line a 23 x 2.5cm loose-bottomed, fluted flan tin, easing the pastry into the base. Trim the pastry edges with scissors
+                                                                    (save any trimmings) so it sits slightly above the tin (if it shrinks, it shouldn’t now go below the level of the tin). Press the pastry into the flutes, lightly prick the base with a
+                                                                    fork, then chill for 10 mins. Put a baking sheet in the oven and heat oven to 200C/fan 180C/gas 6.</p>
+                                                                <p>2. Line pastry case with foil, shiny side down, fill with dry beans and bake on the hot sheet for 15 mins. Remove foil and beans and bake for 4-5 mins more until the pastry is pale golden.
+                                                                    If you notice any small holes or cracks, patch up with pastry trimmings. You can make up to this point a day ahead.</p>
+                                                                <p>3. While the pastry cooks, prepare the filling. Heat a small frying pan, tip in the lardons and fry for a couple of mins. Drain off any liquid that comes out, then continue cooking until
+                                                                    the lardons just start to colour, but aren’t crisp. Remove and drain on paper towels. Cut three quarters of the cheese into small dice and finely grate the rest. Scatter the diced cheese
+                                                                    and fried lardons over the bottom of the pastry case.</p>
+                                                                <p>4. While the pastry cooks, prepare the filling. Heat a small frying pan, tip in the lardons and fry for a couple of mins. Drain off any liquid that comes out, then continue cooking until
+                                                                    the lardons just start to colour, but aren’t crisp. Remove and drain on paper towels. Cut three quarters of the cheese into small dice and finely grate the rest. Scatter the diced cheese
+                                                                    and fried lardons over the bottom of the pastry case.</p>
+                                                                <p>5. Half-pull the oven shelf out and put the flan tin on the baking sheet. Quickly pour the rest of the filling into the pastry case – you get it right to the top this way. Scatter the grated
+                                                                    cheese over the top, then carefully push the shelf back into the oven. Lower the oven to 190C/fan 170C/gas 5. Bake for about 25 mins, or until golden and softly set (the centre should
+                                                                    not feel too firm). Let the quiche settle for 4-5 mins, then remove from the tin. Serve freshly baked, although it’s also good cold.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-default reset" onclick="resetResults();"><i class="fas fa-backward"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container" id="salmon">
+                                            <div class="container trending">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <img class="img-responsive" src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <h2>LEMON BUTTER SEARED SALMON</h2>
+                                                        <p>Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. Not only that, salmon is healthy and you can’t feel bad eating something this good. Enjoy!</p>
+                                                        <h5>Recipe By: Good Food Magazine</h5>
+                                                        <h5><i class="fas fa-utensils"></i> Serves: 2 </h5>
+                                                        <h5><i class="far fa-clock"></i> Total Time: 20 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Prep Time: 10 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Cook Time: 10 mins</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Ingredients</h3>
+                                                            </div>
+                                                            <div class="panel-body ingredients">
+                                                                <ul>
+                                                                    <li>2/3 lb. salmon</li>
+                                                                    <li>2 tablespoons butter</li>
+                                                                    <li>1/2 lemon, juiced</li>
+                                                                    <li>1 tablespoon minced garlic</li>
+                                                                    <li>1 tablespoon dill</li>
+                                                                    <li>salt and pepper, to taste</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Method</h3>
+                                                            </div>
+                                                            <div class="panel-body method">
+                                                                <p>1. First, prep salmon by patting with a paper towel to remove moisture. Then, season with salt and pepper, to taste.</p>
+                                                                <p>2. Place 2 tablespoons of butter and 1 tablespoons minced garlic into a skillet and set over medium/high heat. Place salmon skin side up in the pan and sear for 4 minutes. Flip salmon and
+                                                                    cook for an additional 3-4 minutes until barely pink in the middle.</p>
+                                                                <p>3. Once flakey and cooked, squeeze 1/2 lemon on top of salmon and sprinkle with fresh dill.</p>
+                                                                <p>4.Store leftovers in airtight container.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-default reset" onclick="resetResults();"><i class="fas fa-backward"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="container" id="smoothie">
+                                            <div class="container trending">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <img class="img-responsive" src="https://images.pexels.com/photos/775030/pexels-photo-775030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <h2>BREAKFAST SMOOTHIE</h2>
+                                                        <p>Make the most of the berry season with a glass of fruity goodness</p>
+                                                        <h5>Recipe By: Good Food Magazine</h5>
+                                                        <h5><i class="fas fa-utensils"></i> Serves: 1 </h5>
+                                                        <h5><i class="far fa-clock"></i> Total Time: 5 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Prep Time: 5 mins</h5>
+                                                        <h5><i class="fas fa-angle-right"></i> Cook Time: 0 mins</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Ingredients</h3>
+                                                            </div>
+                                                            <div class="panel-body ingredients">
+
+                                                                <ul>
+                                                                    <li>1 small ripe banana</li>
+                                                                    <li>about 140g blackberries, blueberries, raspberries or strawberries(or use a mix), plus extra to serve</li>
+                                                                    <li>apple juice or mineral water, optional</li>
+                                                                    <li>runny honey, to serve</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-8">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">Method</h3>
+                                                            </div>
+                                                            <div class="panel-body method">
+                                                                <p>1. Slice the banana into your blender or food processor and add the berries of your choice. Whizz until smooth. With the blades whirring, pour in juice or water to make the consistency you
+                                                                    like. Toss a few extra fruits on top, drizzle with honey and serve.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-default reset" onclick="resetResults();"><i class="fas fa-backward"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
     </main>
 
     <div class="sidebar">

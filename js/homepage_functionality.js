@@ -16,6 +16,8 @@ $(document).ready(function() {
     }
   });
   
+   
+  
   var $item = 0,
       $itemNo = $('.hero figure').length;
   function transitionSlide() {
@@ -47,7 +49,32 @@ function hideHome() {
      home =  home.style.display = "none";
 }
 
+function showPancakes() { 
+     let pancake = document.getElementById("pancake");
+     pancake =  pancake.style.display = "block";
+}
+
+function showQuiche() { 
+     let quiche = document.getElementById("quiche");
+     quiche =  quiche.style.display = "block";
+}
+
+function showSalmon() { 
+     let salmon = document.getElementById("salmon");
+     salmon =  salmon.style.display = "block";
+}
+
+function showSmoothie() { 
+     let smoothie = document.getElementById("smoothie");
+     smoothie =  smoothie.style.display = "block";
+}
+
+
 function resetResults() { 
       window.location.reload();
 }
 
+function showReset() { 
+     let reset = document.getElementById("reset");
+     reset =  reset.style.display = "block";
+}
