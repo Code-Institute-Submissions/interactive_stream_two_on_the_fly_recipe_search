@@ -150,6 +150,11 @@ function stopLoader() {
 
 
 
+let config = {
+  APP_ID : "3755737a",
+  APP_KEY : "e8d286856a2775535f230e0f8d05c433",
+}
+
 let pageNumber = 0;
 
 function submitIngredient(pageNumber) {
