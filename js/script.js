@@ -108,11 +108,12 @@ function displayRecipeData(apiData) {
         htmlRecipe += "<div class='text-left'><strong>Fat % of RDI: </strong><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='" + (fat / fatRDI).toFixed(2) + "%" + "aria-valuemin='0' aria-valuemax='100' style='width:" + (fat / fatRDI).toFixed(2) + "%'>"+ (fat / fatRDI).toFixed(2)  +"%</div></div></div></div>";
         //print out prev and next buttons
         if (i == 11) {
-            htmlRecipe += "<button class='bt btn-default onclick='submitIngredient(pageNumber+1)'>Next</button>";
-            if (pageNumber > 1) {
-                htmlRecipe += "<button class='bt btn-default onclick='submitIngredient(pageNumber-1)'>Previous</button>";
-            }
-            pageNumber++;
+            htmlRecipe += "<div class='col-xs-12'><button class='btn' onclick='submitIngredient(1)'>1</button>";
+            htmlRecipe += "<button class='btn' onclick='submitIngredient(2)'>2</button>";
+            htmlRecipe += "<button class='btn' onclick='submitIngredient(3)'>3</button>";
+            htmlRecipe += "<button class='btn' onclick='submitIngredient(4)'>4</button>";
+            htmlRecipe += "<button class='btn' onclick='submitIngredient(5)'>5</button>";
+            htmlRecipe += "</div>";
             console.log("page number "+ pageNumber);
         }
         document.getElementById("data").innerHTML = htmlRecipe;
@@ -136,16 +137,6 @@ request.onreadystatechange = function() {
 };
 
 //Function getting called when the search button is clicked--------------------------------------------------------
-
-function showLoader() {
-    let loader = document.getElementById("loader");
-    loader = loader.style.display = "block";
-}
-
-function stopLoader() {
-    let loader = document.getElementById("loader");
-    loader = loader.style.display = "none";
-}
 
 
 
@@ -219,10 +210,6 @@ function submitIngredient(pageNumber) {
         apiRequest += "&diet=high-protein";
     }
 
-    // let fibre = document.getElementById("dietaryForm")["high-fibre"].checked;
-    // if (fibre == true) {
-    //     apiRequest += "&diet=high-fibre";
-    // }
 
     let fat = document.getElementById("dietaryForm")["low-fat"].checked;
     if (fat == true) {
@@ -234,10 +221,6 @@ function submitIngredient(pageNumber) {
         apiRequest += "&diet=low-carb";
     }
 
-    // let sodium = document.getElementById("dietaryForm")["low-sodium"].checked;
-    // if (sodium == true) {
-    //     apiRequest += "&diet=low-sodium";
-    // }
 
     let calories = document.getElementById("dietaryForm")["maxCalories"].value;
     if (calories != "") {
@@ -248,7 +231,7 @@ function submitIngredient(pageNumber) {
 
     request.open("GET", apiRequest);
     request.send();
-    //stoploader();
+    
 }
 
 

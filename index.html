@@ -9,6 +9,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+
 </head>
 
 <body>
@@ -36,15 +37,20 @@
                             <input class="btn btn-default" id="reset" type="reset" value="Clear Search Results" onClick="resetResults()">
                         </div>
                         <div class="form-group">
-                            <input name="ingredient" type="text" id="clickSearch" class="search-query form-control" placeholder="Type an ingredient" />
+                            <input name="ingredient" type="text" class="search-query form-control" placeholder="Type an ingredient" />
+
                         </div>
                         <div class="form-group">
                             <select class="form-control" id="preselect">
           <option value="" selected>Popular Ingredients</option>
-          <option value="carrot">Carrot</option>
-          <option value="parsnip">Parnsip</option>
-          <option value="kale">Kale</option>
+          <option value="avocado">Avocado</option>
+          <option value="butternut squash">Butternut Squash</option>
+          <option value="sweet potato">Sweet Potato</option>
           <option value="onion">Onion</option>
+          <option value="carrot">Carrot</option>
+          <option value="red pepper">Red Pepper</option>
+          <option value="chicken">Chicken</option>
+          <option value="beef">Beef</option>
         </select>
                         </div>
                 </div>
@@ -60,7 +66,7 @@
                         <a class="button" href="#">Advanced Search Options</a>
                     </div>
                     <div class="col-xs-12 search">
-                        <button class="btn search-buttons" onclick="hideHome(); showReset(); showLoader(); submitIngredient(pageNumber);">SEARCH <i class="fas fa-search"></i></button>
+                        <button class="btn search-buttons" onclick="hideHome(); showReset(); submitIngredient(1);">SEARCH <i class="fas fa-search"></i></button>
                     </div>
 
                 </div>
@@ -68,11 +74,8 @@
         </div>
 
 
-        <div id="loader">
-            <p>Stuff</p>
-        </div>
 
-        <!------------------------------------------------------------->
+
         <div id="home">
             <div class="container">
                 <div class="row">
@@ -91,7 +94,7 @@
                 </div>
             </div>
 
-            <!------------------------------------------------------------->
+          
 
             <div class="container">
                 <div class="row">
@@ -101,7 +104,7 @@
                 </div>
             </div>
 
-            <!------------------------------------------------------------->
+           
 
             <div class="container">
                 <div class="row">
@@ -118,7 +121,7 @@
                             <img class="img-responsive" src="images/salmon.jpg" alt="Pan Seared Salmon" />
                             <h2>SEARED SALMON</h2>
                             <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
-                             <button class="btn btn-default" onclick="hideHome(); showSalmon();">Click for Recipe</button>
+                            <button class="btn btn-default" onclick="hideHome(); showSalmon();">Click for Recipe</button>
                         </div>
                     </div>
                     <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
@@ -141,8 +144,6 @@
             </div>
 
 
-            <!------------------------------------------------------------->
-
             <div class="container hidden-xs">
                 <div class="row">
                     <div class="col-xs-12">
@@ -153,7 +154,7 @@
                                     <div class="panel">
                                         <h2>SUMPTIOUS PANCAKES</h2>
                                         <p>Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch.</p>
-                                        <button onclick="hideHome(); showPancakes();">Click for Recipe</p>
+                                        <button class="btn btn-default" onclick="hideHome(); showPancakes();">Click for Recipe</p>
                                     </div>
                                 </figure>
                                 <figure>
@@ -161,7 +162,7 @@
                                     <div class="panel">
                                         <h2>SEARED SALMON</h2>
                                         <p> Make this Lemon Butter Pan Seared Salmon with 5 ingredients and in 20 minutes or less. </p>
-                                        <button onclick="hideHome(); showSalmon();">Click for Recipe</p>
+                                        <button class="btn btn-default" onclick="hideHome(); showSalmon();">Click for Recipe</p>
                                     </div>
                                 </figure>
                                 <figure>
@@ -169,7 +170,7 @@
                                    <div class="panel">
                                         <h2>QUICHE LORRAINE</h2>
                                         <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe.</p>
-                                        <button onclick="hideHome(); showQuiche();">Click for Recipe</p>
+                                        <button class="btn btn-default" onclick="hideHome(); showQuiche();">Click for Recipe</p>
                                     </div>
                                 </figure>
                                 <figure>
@@ -177,7 +178,7 @@
                                     <div class="panel">
                                         <h2>BERRY SMOOTHIE</h2>
                                         <p>Make the most of the berry season with a glass of fruity goodness.</p>
-                                        <button onclick="hideHome(); showSmoothie();">Click for Recipe</p>
+                                        <button class="btn btn-default" onclick="hideHome(); showSmoothie();">Click for Recipe</p>
                                     </div>
                                 </figure>
                             </div>
@@ -187,7 +188,7 @@
             </div>
             
             
-<!------------------------------------------------------------->            
+           
             
             
             
@@ -195,28 +196,32 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Get Social</h2>
+                            <h2>Follow Us:</h2>
+                            <ul class="social_media">
+						<li><a href="#"><i class="fab fa-facebook-square fa-3x"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram fa-3x"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter fa-3x"></i></a></li>
+					</ul>
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
 
-<!------------------------------------------------------------->
+
 
         <div class="container-fluid" id="data">
 
         </div>
         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-                                        <!------------------------------------------------------------->
-
+                                      
+                                      
                                         <div class="container" id="pancake">
-
                                             <div class="container trending">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-4">
-                                                        <img class="img-responsive" src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                        <img class="img-responsive" src="images/american_pancakes.jpg" alt="American Pancakes">
                                                     </div>
 
                                                     <div class="col-xs-12 col-sm-8">
@@ -230,7 +235,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="container">
+                                            
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-xs-12 col-sm-4">
@@ -274,7 +279,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <button class="btn btn-default reset" onclick="resetResults();"><i class="fas fa-backward"></i></button>
@@ -286,11 +291,11 @@
                                             <div class="container trending">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-4">
-                                                        <img class="img-responsive" src="https://images.pexels.com/photos/568370/pexels-photo-568370.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                        <img class="img-responsive" src="images/quiche.jpg" alt="Quiche Lorraine">
                                                     </div>
 
                                                     <div class="col-xs-12 col-sm-8">
-                                                        <h2>ULTIMATE QUICHE LORRAINE</h2>
+                                                        <h2>QUICHE LORRAINE</h2>
                                                         <p>The key to making the perfect quiche is simplicity, as you can see with this tasty recipe</p>
                                                         <h5>Recipe By: Angela Nilsen</h5>
                                                         <h5><i class="fas fa-utensils"></i> Serves: 8 </h5>
@@ -366,7 +371,7 @@
                                             <div class="container trending">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-4">
-                                                        <img class="img-responsive" src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                        <img class="img-responsive" src="images/salmon.jpg" alt="Pan Seared Salmon">
                                                     </div>
 
                                                     <div class="col-xs-12 col-sm-8">
@@ -428,7 +433,7 @@
                                             <div class="container trending">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-4">
-                                                        <img class="img-responsive" src="https://images.pexels.com/photos/775030/pexels-photo-775030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                                                        <img class="img-responsive" src="images/smoothie.jpg" alt="Berry Smoothie">
                                                     </div>
 
                                                     <div class="col-xs-12 col-sm-8">
@@ -528,11 +533,6 @@
                     <label for="high-protein">High-Protein</label>
                 </li>
 
-                <!--<li>-->
-                <!--    <input type="checkbox" name="high-fibre" value="false">-->
-                <!--    <label for="high-fiber">High-Fibre</label>-->
-                <!--</li>-->
-
                 <li>
                     <input type="checkbox" name="low-fat" value="false">
                     <label for="low-fat">Low-Fat</label>
@@ -542,11 +542,6 @@
                     <input type="checkbox" name="low-carb" value="false">
                     <label for="low-carb">Low-Carb</label>
                 </li>
-
-                <!--<li>-->
-                <!--    <input type="checkbox" name="low-sodium" value="false">-->
-                <!--    <label for="low-sodium">Low-Sodium</label>-->
-                <!--</li>-->
 
                 <li>Max Calories
                     <input name="maxCalories" type="text" size="4" value="600">

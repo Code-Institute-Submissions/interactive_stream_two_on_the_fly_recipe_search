@@ -2,7 +2,6 @@
 
 body,
 html {
-    height: 100%;
     font-family: 'Roboto', sans-serif;
 
 }
@@ -105,7 +104,7 @@ main {
 
 .sidebar h2 {
     text-align: center;
-    font-weight: bold;
+    font-size:1.5em;
     color: #ffffff;
 }
 
@@ -136,7 +135,7 @@ main {
 .nav-left {
     position: fixed;
     left: 20px;
-    top: 20px;
+    top: 10px;
 }
 
 .nav-left {
@@ -219,6 +218,10 @@ main {
 
 
 /*Mobile View Trending*/
+
+.mobile {
+  padding-bottom: 2em;
+}
 
 .mobile h2 {
   font-size: 1em;
@@ -468,18 +471,22 @@ main {
 
 #pancake {
   display: none;
+  padding-bottom: 1.8em;
 }
 
 #salmon {
   display: none;
+  padding-bottom: 1.8em;
 }
 
 #quiche {
   display: none;
+  padding-bottom: 1.8em;
 }
 
 #smoothie {
   display: none;
+  padding-bottom: 1.8em;
 }
 
 
@@ -528,4 +535,19 @@ img {
 
 #myBtn:hover {
   background-color: #555;
+}
+
+
+ul.social_media {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.social_media li {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+ul.social_media li a {
+    color: #66cc99;;
 }

@@ -1,7 +1,7 @@
 # On the Fly
 
 
-## Project Overview
+## Single Page Application Using an API
 
 
 ### Website Purpose & Goals:
@@ -10,7 +10,7 @@ This website is designed as to provide users with the ability to provide one ing
 
 The site is a single page site using an API to provide users with a simple and efficient solution to their food needs "On the Fly".
 
-### Website Planning & Design Process:
+### UX:
 
 #### 1. Initial Planning 
 
@@ -30,7 +30,7 @@ After the initial planning stage, analog pen and paper wireframes were completed
 
 
 ### Functionality
-This is a multipage website built using a Bootstrap framework for responsive layout. There is a clean sidebar which functions very well as a clear and user friendly filtering system. A hamburger menu appears on this when collapses and this animates into an X when open using a combination of CSS and Jquery.  
+This is a single page website/application built using a Bootstrap framework for responsive layout. There is a clean sidebar which functions very well as a clear and user friendly filtering system. A hamburger menu appears on this when collapses and this animates into an X when open using a combination of CSS and Jquery.  
 
 The main purpose of this site is to enable the user to easily search for a recipe using a single ingredient. The search bar therefore takes pride of place at the top of the page under the logo.
 
@@ -63,6 +63,7 @@ The site has been deployed to be hosted on Github pages. (please see the live li
 ## Acknowledgements
 
 I would like to acknowledge the following media sources:
+
 
 - The photos used on this website were obtained from a combination of sources including stock photo sites such as [Pexels](https://www.pexels.com/ "Pexels") and [Unsplash](https://www.pexels.com/ "Unsplash") along with.
 - The instructional icons on the homepage were obtained from a vector icon site called [Flaticon](https://www.flaticon.com/ "Flaticon")
