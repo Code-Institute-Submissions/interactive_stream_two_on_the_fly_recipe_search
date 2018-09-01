@@ -44,9 +44,27 @@ $(document).ready(function() {
 
 });
 
+
+// function validateForm() { 
+//  var typeIngredient = document.forms["searchForm"]["ingredient"].value;
+//  var selectIngredient = document.forms["searchForm"]["Selectingredient"].value;
+ 
+// if (typeIngredient == "" 
+//     && selectIngredient == "" 
+//     ) {
+// alert( "Please enter at least field" );
+//      return false;    
+//      }   
+//      } 
+
 function hideHome() { 
      let home = document.getElementById("home");
      home =  home.style.display = "none";
+}
+
+function hideRecipeTrend() { 
+     let recipeTrend = document.getElementById("recipe_trend");
+      recipeTrend =   recipeTrend.style.display = "none";
 }
 
 function showPancakes() { 
